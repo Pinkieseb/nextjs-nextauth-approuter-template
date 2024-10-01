@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #003049;
+  --color-primary-light: #004b70;
+  --color-primary-dark: #001f2f;
+  --color-secondary: #669bbc;
+  --color-secondary-light: #7faed0;
+  --color-secondary-dark: #4d7a9e;
+  --color-accent-1: #780000;
+  --color-accent-1-light: #9e0000;
+  --color-accent-1-dark: #520000;
+  --color-accent-2: #c1121f;
+  --color-accent-2-light: #d52b38;
+  --color-accent-2-dark: #9d0e19;
+  --color-background: #fdf0d5;
+  --color-background-dark: #003049;
+  --color-text-primary: #003049;
+  --color-text-secondary: #669bbc;
+  --color-text-muted: #6b7280;
+  --color-text-light: #fdf0d5;
+  --color-border: #d1d5db;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --color-overlay: rgba(0, 48, 73, 0.5);
+  --color-error: #ef4444;
+  --color-success: #10b981;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  line-height: var(--line-height-normal);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headings);
+  font-weight: var(--font-weight-bold);
+}
+
+a {
+  color: var(--color-secondary);
+  transition: color var(--transition-default);
+}
+
+a:hover {
+  color: var(--color-secondary-dark);
+}
+
+button {
+  transition: background-color var(--transition-default), transform var(--transition-fast);
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+input, textarea, select {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-default);
+  padding: var(--spacing-sm) var(--spacing-md);
+  transition: border-color var(--transition-default);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-primary-light);
+}
+
+.card {
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 4px 6px var(--color-shadow);
+  transition: transform var(--transition-default), box-shadow var(--transition-default);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px var(--color-shadow);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--color-background-dark);
+    --color-text-primary: var(--color-text-light);
+    --color-border: var(--color-primary-light);
+  }
+}
+
+/* Custom utility classes */
+.gradient-blue {
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+}
+
+.gradient-red {
+  background: linear-gradient(to right, var(--color-accent-1), var(--color-accent-2));
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.overlay {
+  background-color: var(--color-overlay);
+}
